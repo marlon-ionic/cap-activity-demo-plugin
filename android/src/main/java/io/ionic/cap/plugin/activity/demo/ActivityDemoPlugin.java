@@ -82,31 +82,7 @@ public class ActivityDemoPlugin extends Plugin {
         }
         // Do something with the result data
     }
-
-    @Override
-    protected Bundle saveInstanceState() {
-        Bundle bundle = super.saveInstanceState();
-        if (bundle != null && contactSaved != null) {
-            bundle.putString("contactSaved", contactSaved);
-//            var o = getContactResponseObject(Uri.parse(contactSaved));
-//            var sub = new Bundle();
-//            sub.putString("name", o.getString("name"));
-//            sub.putString("phone", o.getString("phone"));
-//            sub.putString("value", contactSaved);
-//            bundle.putString("contactSaved", contactSaved);
-//            bundle.putBundle("data", sub);
-        }
-        return bundle;
-    }
-
-    @Override
-    protected void restoreState(Bundle state) {
-        String storedImageFileSavePath = state.getString("contactSaved");
-        if (storedImageFileSavePath != null) {
-            contactSaved = storedImageFileSavePath;
-        }
-    }
-
+    
     private JSObject getContactResponseObject(Uri contactUri) {
         JSObject ret = new JSObject();
         try {
