@@ -25,12 +25,10 @@ npx cap run android
 
 ## Special Notes
 
-To test the plugin, you can try either:
+To test the plugin, you can try either of the following methods to kill the app and simulate the main activity being restored:
 
-- Use the [Don't Keep Activities](https://developer.android.com/studio/debug/dev-options) developer option to simulate the app being killed by the system. This option is found in the Developer Options section of the device settings.
-- Kill the app by running `adb shell am kill io.ionic.starter` in the terminal. This will simulate the app being killed by the system.
-
-If you choose either button on the homepage, you should see the `appRestoredResult` event being called when you return to the example app. If you don't use either of these
+- Before launching the app, enable the [Don't Keep Activities](https://developer.android.com/studio/debug/dev-options) developer option to simulate the app being killed by the system. This option is found in the Developer Options section of the device settings.
+- Open the custom plugin's activity by tapping the `Pick` button, then while the list of contacts is visible, kill the app by running `adb shell am kill io.ionic.starter` in the terminal. This will simulate the app being killed by the system.
 
 ## API
 
