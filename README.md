@@ -1,12 +1,16 @@
 # cap-activity-demo-plugin
 
-This is a simple demo of how the `appRestoredResult` event is called in a Capacitor plugin, when the main activity is restored after being killed by the system.
+This is a simple demo of how the `appRestoredResult` event is called in a custom Capacitor plugin, when the main activity is restored after being killed by the system. If you check out the `ActivityDemoPlugin` @ `android/src/main/java/io/ionic/cap/plugin/activity/demo/ActivityDemoPlugin.java`, you'll see that it's configured to launch a an Actvitity to choose a contact, then return the contact's name and phone number. The `ng-example` app is configured to listen for the `appRestoredResult` event, and display the contact's name and phone number when the event is called. The `Camera` plugin is also included in the `ng-example` app, to demonstrate that the `appRestoredResult` event is only called when the main activity is restored.
+
+The callback of the `appRestoredResult` event will display the result of either plugin that's called.
+
+**Please note:** You'll need to take specific steps to test the plugin, as described in the [Special Notes](#special-notes) section below.
 
 ## Install
 
 ```bash
 # Install dependencies for the plugin, then build it
-npm install cap-activity-demo-plugin
+npm install
 npm run build
 
 # Install dependencies in the ng-example app
@@ -24,11 +28,9 @@ npx cap run android
 To test the plugin, you can try either:
 
 - Use the [Don't Keep Activities](https://developer.android.com/studio/debug/dev-options) developer option to simulate the app being killed by the system. This option is found in the Developer Options section of the device settings.
-- Kill the app by running `adb shell am kill com.example.app` in the terminal. This will simulate the app being killed by the system.
+- Kill the app by running `adb shell am kill io.ionic.starter` in the terminal. This will simulate the app being killed by the system.
 
-If you choose either button on the homepage, you should see the `appRestoredResult` event being called when you return to the example app.
-
-
+If you choose either button on the homepage, you should see the `appRestoredResult` event being called when you return to the example app. If you don't use either of these
 
 ## API
 

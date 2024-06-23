@@ -1,7 +1,7 @@
 {
   "name": "cap-activity-demo-plugin",
   "version": "0.0.1",
-  "description": "Simple demo of launching an Android Activity using the `appRestoredResult` event",
+  "description": "Simple demo of launching an Android Activity and using the `appRestoredResult` event",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
